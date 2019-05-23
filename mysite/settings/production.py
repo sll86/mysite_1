@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'comment',
     'likes',
     'user',
+	'notifications',
+	'my_notifications',
 ]
 
 MIDDLEWARE = [
@@ -82,14 +84,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-'''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -189,3 +184,9 @@ EMAIL_HOST_USER = '2869178100@qq.com'
 EMAIL_HOST_PASSWORD = 'vapixoylzrhndcch'  # 授权码
 EMAIL_SUBJECT_PREFIX = '[个人博客] '
 EMAIL_USE_SSL = True  # 与SMTP服务器通信时，是否启动TLS链接(安全链接)
+
+# django-notifications-hq设置
+DJANGO_NOTIFICATIONS_CONFIG = { 
+    'USE_JSONFIELD': True,
+}
+
